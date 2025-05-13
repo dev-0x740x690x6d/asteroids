@@ -9,6 +9,8 @@ class Player(CircleShape):
         self.radius = PLAYER_RADIUS
         self.rotation = 0
 
+    containers = ()
+
     # in the player class
     def triangle(self):
         forward = pygame.Vector2(0, 1).rotate(self.rotation)

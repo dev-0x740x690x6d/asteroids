@@ -1,4 +1,5 @@
 import pygame
+import sys
 from constants import *
 from player import Player
 from asteroid import Asteroid
@@ -43,6 +44,12 @@ def main():
 
         for update_object in updatable:
             update_object.update(dt)
+
+        for ast_obj in asteroids:
+            if ast_obj.is_colliding(player) == True:
+                print("GAME OVER!")
+                sys.exit()
+                
 
         pygame.display.flip()
         dt = game_clock.tick(60) / 1000
